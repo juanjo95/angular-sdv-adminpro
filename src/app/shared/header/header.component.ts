@@ -1,6 +1,6 @@
 import { Component, NgZone, OnInit } from '@angular/core';
+import { Usuario } from 'src/app/models/usuario.model';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +10,11 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private usuarioSvc: UsuarioService) { }
+  public usuario!:Usuario;
+
+  constructor(private usuarioSvc: UsuarioService) {
+    this.usuario = this.usuarioSvc.usuario;
+  }
 
   ngOnInit(): void {
   }

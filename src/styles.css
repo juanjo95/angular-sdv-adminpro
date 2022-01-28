@@ -9,3 +9,9 @@
 .cursor {
     cursor: pointer;
 }
+
+.img-avatar {
+    width: 200px;
+    max-height: 135px;
+    min-height: 135px;
+}
