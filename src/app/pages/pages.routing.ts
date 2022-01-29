@@ -12,6 +12,9 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { PerfilComponent } from './perfil/perfil.component';
 
+// Mantenimientos
+import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
+
 const routes: Routes = [
   { path: 'dashboard', component: PagesComponent, canActivate:[AuthGuard], children:[
     { path: '', component: DashboardComponent, data: {titulo:'Dashboard'} },
@@ -20,7 +23,9 @@ const routes: Routes = [
     { path: 'account-settings', component: AccountSettingsComponent, data: {titulo:'Ajustes de cuenta'} },
     { path: 'promesas', component: PromesasComponent, data: {titulo:'Promesas'} },
     { path: 'rxjs', component: RxjsComponent, data: {titulo:'Rxjs'} },
-    { path: 'perfil', component: PerfilComponent, data: {titulo:'Perfil usuario'} }
+    { path: 'perfil', component: PerfilComponent, data: {titulo:'Perfil usuario'} },
+    //Mantenimientos
+    { path: 'usuarios', component: UsuariosComponent, data: {titulo:'Usuarios de aplicacion'} }
   ]},
 ];
 
