@@ -1,4 +1,3 @@
-import { Usuario } from './../../../models/usuario.model';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BusquedasService } from 'src/app/services/busquedas.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
@@ -6,6 +5,7 @@ import { CargarUsuario } from '../../../interfaces/cargar-usuarios.interface';
 import Swal from 'sweetalert2';
 import { ModalImagenService } from '../../../services/modal-imagen.service';
 import { delay, Subscription } from 'rxjs';
+import { Usuario } from '../../../models/usuario.model';
 
 
 @Component({
@@ -62,7 +62,7 @@ export class UsuariosComponent implements OnInit, OnDestroy {
     if(termino.length === 0){
       return this.usuarios = this.usuariosTemp;
     }
-    this.busquedaSvc.buscar('usuarios',termino).subscribe(res => {
+    this.busquedaSvc.buscar('usuarios',termino).subscribe((res:any) => {
       this.usuarios = res;
     });
   }
@@ -91,7 +91,7 @@ export class UsuariosComponent implements OnInit, OnDestroy {
           );
         });
       }
-    })
+    });
   }
 
   cambiarRole(usuario:Usuario){
